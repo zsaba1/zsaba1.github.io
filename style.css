@@ -85,7 +85,7 @@ body > header {
  }
 
 body > footer {
-    background-color: orange;
+    background-color: rgb(140, 0, 255);
     display: flex;
 }
 
