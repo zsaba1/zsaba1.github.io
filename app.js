@@ -1,15 +1,17 @@
-document.addEventListener("DOMContentLoaded", () => {
+<img id="wellness-image" src="images/image1.jpg" alt="Wellness Image">
 
-const images = document.querySelectorAll("img");
+<script>
+  const images = [
+    'images/image1.jpg',
+    'images/image2.jpg',
+    'images/image3.jpg'
+  ];
 
-for(const image of images){
-    fetch ("https://dog.ceo/api/breeds/image/random")
-    .then(response => response.json())
-    .then(data => {
-        image.src = data.message
-        image.width = 100;
-        image.height = 100;
-    })
-}
+  function refreshImage() {
+    const imgElement = document.getElementById('wellness-image');
+    const randomIndex = Math.floor(Math.random() * images.length);
+    imgElement.src = images[randomIndex];
+  }
 
-}) 
+  setInterval(refreshImage, 60000); // Refresh image every 60 seconds
+</script>
